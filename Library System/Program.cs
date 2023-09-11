@@ -17,31 +17,31 @@
                     Console.Write("Quantity: ");
                     var quanitiy = Console.ReadLine();
                     Book book = new Book(name, int.Parse(quanitiy));
-                    admin.AddBook(book);
+                    admin.BookManager.AddBook(book);
                 }
                 else if (key == "2")
                 {
                     Console.WriteLine("Enter search info: ");
                     Console.Write("Prefix to search by: ");
                     var prefix = Console.ReadLine();
-                    admin.SearchingForBookBy(prefix);
+                    admin.BookManager.SearchingForBookBy(prefix);
                     Console.WriteLine("--------------------");
                 }
                 else if (key == "3")
                 {
                     Console.Write("Enter book name:");
                     var bookName = Console.ReadLine();
-                    admin.PrintUsersBorrowed(bookName);
+                    admin.BookManager.PrintUsersBorrowed(bookName);
                     Console.WriteLine("--------------------");
                 }
                 else if (key == "4")
                 {
-                    admin.PrintBooksById();
+                    admin.BookManager.PrintBooksById();
                     Console.WriteLine("--------------------");
                 }
                 else if (key == "5")
                 {
-                    admin.PrintBooksByName();
+                    admin.BookManager.PrintBooksByName();
                     Console.WriteLine("--------------------");
                 }
                 else if (key == "6")
@@ -52,7 +52,7 @@
                     Console.Write("Name: ");
                     var name = Console.ReadLine();
                     User user = new User(int.Parse(id), name);
-                    admin.AddUser(user);
+                    admin.UserManager.AddUser(user);
                 }
                 else if (key == "7")
                 {
@@ -70,7 +70,7 @@
                 }
                 else if (key == "9")
                 {
-                    admin.PrintUsers();
+                    admin.UserManager.PrintUsers();
                     Console.WriteLine("--------------------");
                 }
                 else if (key == "10")

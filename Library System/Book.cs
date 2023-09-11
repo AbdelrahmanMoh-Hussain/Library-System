@@ -8,7 +8,7 @@ namespace Library_System
 {
     internal class Book
     {
-        public static int BooksIdCounter = 0;
+        public static int BooksIdSequence = 0;
 
         public int Id { get; set; }
         public string Name { get; set; }
@@ -17,7 +17,7 @@ namespace Library_System
 
         public Book(string name, int quantity)
         {
-            Id = BooksIdCounter++;
+            Id = BooksIdSequence++;
             Name = name;
             Quantity = quantity;
             UsersBorrowed = new List<User>();
