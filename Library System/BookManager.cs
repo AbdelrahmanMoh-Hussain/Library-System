@@ -14,7 +14,8 @@ namespace Library_System
         public void AddBook(Book book)
         {
             Books.Add(book);
-            Console.WriteLine("Book Added Successfully");
+            Console.WriteLine("Book Added Successfully"); 
+            Console.WriteLine("--------------------");
         }
 
         public void SearchingForBookBy(string prefix)
@@ -22,7 +23,7 @@ namespace Library_System
             bool nothingFound = true;
             foreach (var book in Books)
             {
-                if (book.Name.StartsWith(prefix))
+                if (book.Name.StartsWith(prefix, StringComparison.OrdinalIgnoreCase))
                 {
                     nothingFound = false;
                     Console.WriteLine(book);
@@ -32,26 +33,44 @@ namespace Library_System
             {
                 Console.WriteLine("Sorry Nothing Found");
             }
+            Console.WriteLine("--------------------");
         }
         public void PrintBooksById()
         {
+            if (Books.Count == 0)
+            {
+                Console.WriteLine("There is no Books in the system until now!!");
+                return;
+            }
             foreach (var book in Books)
             {
                 Console.WriteLine(book);
             }
+            Console.WriteLine("--------------------");
 
         }
         public void PrintBooksByName()
         {
+            if (Books.Count == 0)
+            {
+                Console.WriteLine("There is no Books in the system until now!!");
+                return;
+            }
             List<Book> SortedList = Books.OrderBy(o => o.Name).ToList();
             foreach (var book in SortedList)
             {
                 Console.WriteLine(book);
             }
+            Console.WriteLine("--------------------");
         }
 
         public void PrintUsersBorrowed(string bookName)
         {
+            if (Books.Count == 0)
+            {
+                Console.WriteLine("There is no Books in the system until now!!");
+                return;
+            }
             foreach (var b in Books)
             {
                 if (b.Name == bookName)
@@ -63,6 +82,7 @@ namespace Library_System
                     break;
                 }
             }
+            Console.WriteLine("--------------------");
         }
     }
 }

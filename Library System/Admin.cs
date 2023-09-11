@@ -24,10 +24,12 @@ namespace Library_System
                     break;
                 }
             }
+            bool bookFound = false;
             foreach (var b in BookManager.Books)
             {
                 if (b.Name == bookName)
                 {
+                    bookFound = true;
                     if (b.Quantity > 0)
                     {
                         b.UsersBorrowed.Add(user);
@@ -45,6 +47,11 @@ namespace Library_System
                     }
                 }
             }
+            if(!bookFound) 
+            {
+                Console.WriteLine("Sorry Nothing Found");
+            }
+            Console.WriteLine("--------------------");
         }
 
         public void UserReturnBook(string userName, string bookName)
@@ -58,15 +65,22 @@ namespace Library_System
                     break;
                 }
             }
+            bool bookFound = false;
             foreach (var b in BookManager.Books)
             {
                 if (b.Name == bookName)
                 {
+                    bookFound = true;
                     b.UsersBorrowed.Remove(user);
                     b.Quantity++;
-                    Console.WriteLine($"User {userName} borrowed {bookName} book, this book available quantity = {b.Quantity}");
+                    Console.WriteLine($"User {userName} return {bookName} book, this book available quantity = {b.Quantity}");
                 }
             }
+            if (!bookFound)
+            {
+                Console.WriteLine("Sorry Nothing Found");
+            }
+            Console.WriteLine("--------------------");
         }
 
 

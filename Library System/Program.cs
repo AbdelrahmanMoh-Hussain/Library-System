@@ -56,22 +56,24 @@
                 }
                 else if (key == "7")
                 {
-                    Console.WriteLine("Enter user name & book name:");
+                    Console.Write("Enter user name: ");
                     var userName = Console.ReadLine();
+                    Console.Write("Enter book name: ");
                     var bookName = Console.ReadLine();
                     admin.UserBorroweBook(userName, bookName);
                 }
                 else if (key == "8")
                 {
-                    Console.WriteLine("Enter user name & book name:");
+                    Console.Write("Enter user name: ");
                     var userName = Console.ReadLine();
+                    Console.Write("Enter book name: ");
                     var bookName = Console.ReadLine();
                     admin.UserReturnBook(userName, bookName);
                 }
                 else if (key == "9")
                 {
                     admin.UserManager.PrintUsers();
-                    Console.WriteLine("--------------------");
+                    
                 }
                 else if (key == "10")
                 {

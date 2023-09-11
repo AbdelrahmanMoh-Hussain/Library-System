@@ -15,9 +15,8 @@ namespace Library_System
         {
             Users.Add(user);
             Console.WriteLine("User Added Successfully");
+            Console.WriteLine("--------------------");
         }
-
-       
 
         public void PrintUsers()
         {
@@ -30,6 +29,7 @@ namespace Library_System
             {
                 Console.WriteLine(user);
             }
+            Console.WriteLine("--------------------");
         }
     }
 }
